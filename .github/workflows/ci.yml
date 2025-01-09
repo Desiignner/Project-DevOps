@@ -1,12 +1,12 @@
 name: CI Pipeline
 
 on:
-  pull_request:
+  pull_request: # Uruchamia workflow przy każdym PR do określonej gałęzi
     branches:
-      - main
-  push:
+      - master
+  push: # Uruchamia workflow przy każdym pushu do określonej gałęzi
     branches:
-      - main
+      - master
 
 jobs:
   build:
@@ -31,4 +31,5 @@ jobs:
 
       - name: Run basic test
         run: echo "Test"
+
 
