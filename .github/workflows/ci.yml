@@ -3,40 +3,35 @@ name: CI Pipeline
 on:
   pull_request:
     branches:
-      
--main
-push:
-  branches:
--main
+      - main
+  push:
+    branches:
+      - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      
-name: Checkout code
-      uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-      
-name: Set up Python
-      uses: actions/setup-python@v3
-      with:
-        python-version: '3.9'
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.9'
 
-      
-name: Install dependencies
-      run: |
-        pip install -r requirements.txt
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
 
-      
-name: Build Docker image
-      run: |
-        docker build -t flask-app .
+      - name: Build Docker image
+        run: |
+          docker build -t flask-app .
 
-      
-name: Run basic test
-      run: echo "Test"
+      - name: Run basic test
+        run: echo "Test"
+
 
 
 
