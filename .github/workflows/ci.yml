@@ -3,10 +3,10 @@ name: CI Pipeline
 on:
   pull_request: # Uruchamia workflow przy każdym PR do określonej gałęzi
     branches:
-      - master
+      - main
   push: # Uruchamia workflow przy każdym pushu do określonej gałęzi
     branches:
-      - master
+      - main
 
 jobs:
   build:
